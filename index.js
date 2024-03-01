@@ -26,7 +26,7 @@ app.get('/api/departments', async (req, res, next) => {
 app.get('/api/employees', async (req, res, next) => {
     try {
         const SQL = `
-            SELECT * from employees ORDER BY created_at DESC;
+            SELECT * from employees ORDER BY id;
         `
         const response = await client.query(SQL)
         res.send(response.rows)
