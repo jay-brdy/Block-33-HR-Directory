@@ -2,7 +2,7 @@
 const express = require('express')
 const app = express()
 const pg = require('pg')
-const client = new pg.Client(process.env.DATABASE_URL || 'postgres://localhost/acme_hr_directories_db')
+const client = new pg.Client(process.env.DATABASE_URL || 'postgres://localhost/acme_hr_directory_db')
 
 //app routes here
 app.use(express.json());
@@ -39,11 +39,11 @@ app.get('/api/employees', async (req, res, next) => {
 app.post('/api/employees', async (req, res, next) => {
     try {
         const SQL = `
-        INSERT INTO employees(name, department_id)
+        INSERT INTO employees(name, departments_id)
         VALUES($1, $2)
         RETURNING *
       `
-        const response = await client.query(SQL, [req.body.name, req.body.department_id])
+        const response = await client.query(SQL, [req.body.name, req.body.departments_id])
         res.send(response.rows[0])
     } catch (error) {
         next(error)
@@ -55,12 +55,12 @@ app.put('/api/employees/:id', async (req, res, next) => {
     try {
         const SQL = `
         UPDATE employees
-        SET name=$1, department_id=$2, updated_at= now()
+        SET name=$1, departments_id=$2, updated_at= now()
         WHERE id=$3 RETURNING *
       `
         const response = await client.query(SQL, [
             req.body.name,
-            req.body.department_id,
+            req.body.departments_id,
             req.params.id
         ])
         res.send(response.rows[0])
@@ -107,8 +107,8 @@ const init = async () => {
     await client.query(SQL)
     console.log('tables created')
     SQL = `
-        INSERT INTO departments(name) VALUES('Finance');
         INSERT INTO departments(name) VALUES('IT');
+        INSERT INTO departments(name) VALUES('Finance');
         INSERT INTO departments(name) VALUES('Shipping');
         INSERT INTO employees(name, departments_id) VALUES('Jay', (SELECT id FROM departments WHERE name='IT'));
         INSERT INTO employees(name, departments_id) VALUES('Jessica', (SELECT id FROM departments WHERE name='Finance'));
