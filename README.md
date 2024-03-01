@@ -6,11 +6,11 @@ Used curl tool in the terminal to test. The following below are what I used to t
 
 This command returns an array of employees. 
 ```
-[{"id":1,"name":"Jay","created_at":"2024-03-01T07:27:50.181Z","updated_at":"2024-03-01T07:27:50.181Z","departments_id":1},
-{"id":3,"name":"John","created_at":"2024-03-01T07:27:50.181Z","updated_at":"2024-03-01T07:27:50.181Z","departments_id":2},
-{"id":4,"name":"Jacob","created_at":"2024-03-01T07:27:50.181Z","updated_at":"2024-03-01T07:27:50.181Z","departments_id":3},
-{"id":5,"name":"Jennifer","created_at":"2024-03-01T07:27:50.181Z","updated_at":"2024-03-01T07:27:50.181Z","departments_id":3},
-{"id":2,"name":"Jess","created_at":"2024-03-01T07:27:50.181Z","updated_at":"2024-03-01T07:30:32.921Z","departments_id":2}]
+[{"id":1,"name":"Jay","created_at":"2024-03-01T07:32:12.034Z","updated_at":"2024-03-01T07:32:12.034Z","departments_id":1},
+{"id":2,"name":"Jessica","created_at":"2024-03-01T07:32:12.034Z","updated_at":"2024-03-01T07:32:12.034Z","departments_id":2},
+{"id":3,"name":"John","created_at":"2024-03-01T07:32:12.034Z","updated_at":"2024-03-01T07:32:12.034Z","departments_id":2},
+{"id":4,"name":"Jacob","created_at":"2024-03-01T07:32:12.034Z","updated_at":"2024-03-01T07:32:12.034Z","departments_id":3},
+{"id":5,"name":"Jennifer","created_at":"2024-03-01T07:32:12.034Z","updated_at":"2024-03-01T07:32:12.034Z","departments_id":3}]
 ```
 
 ## GET /api/departments 
