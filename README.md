@@ -1,4 +1,7 @@
 # Block 33 - ACME HR Directory
+
+See my deployed site here for [employees](https://jaybrdy-acmehrdirectory.onrender.com/api/employees) and for [departments](https://jaybrdy-acmehrdirectory.onrender.com/api/departments)! 
+
 Used curl tool in the terminal to test. The following below are what I used to test my code...
 
 ## GET /api/employees 
